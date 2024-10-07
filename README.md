@@ -2,8 +2,6 @@
 
 The front-end client for FastDoc, powered by Vue.js and Nuxt.js.
 
-![Logo](https://fastdoc.com/wp-content/uploads/2023/04/logo.svg)
-
 ## About FastDoc
 FastDoc is a medical diagnostic laboratory that offers a full range of bioanalytical testing and telemedicine services.
 
