@@ -35,6 +35,13 @@ export interface ForgotPasswordType extends FormDataType {
   };
 };
 
+export interface ResetPasswordType extends FormDataType {
+  data: {
+    newPassword: DefaultFieldType & { visible: boolean; };
+    confirmPassword: DefaultFieldType & { visible: boolean; };
+  };
+};
+
 export interface PasswordCreationType extends FormDataType {
   data: {
     currentPassword: DefaultFieldType & { visible: boolean; };
