@@ -1,0 +1,225 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Place",
+      "@id": "https://fastdoc.com/#place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "215 Water St",
+        "addressLocality": "Brooklyn New York",
+        "addressRegion": "New York",
+        "postalCode": "11201",
+        "addressCountry": "United States of America"
+      }
+    },
+    {
+      "@type": [
+        "MedicalOrganization",
+        "Organization"
+      ],
+      "@id": "https://fastdoc.com/#organization",
+      "name": "FastDoc",
+      "url": "https://fastdoc.com",
+      "email": "info@fastdoc.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "215 Water St",
+        "addressLocality": "Brooklyn New York",
+        "addressRegion": "New York",
+        "postalCode": "11201",
+        "addressCountry": "United States of America"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://fastdoc.com/#logo",
+        "url": "https://fastdoc.com/images/logo/logo.png",
+        "contentUrl": "https://fastdoc.com/images/logo/logo.png",
+        "caption": "FastDoc",
+        "inLanguage": "en-US",
+        "width": "2204",
+        "height": "1766"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "(347) 462-0635",
+          "contactType": "customer support"
+        }
+      ],
+      "location": {
+        "@id": "https://fastdoc.com/#place"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://fastdoc.com/#website",
+      "url": "https://fastdoc.com",
+      "name": "FastDoc",
+      "publisher": {
+        "@id": "https://fastdoc.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://fastdoc.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://fastdoc.com/images/logo/logo.png",
+      "url": "https://fastdoc.com/images/logo/logo.png",
+      "width": "2560",
+      "height": "1710",
+      "caption": "FastDoc - Telehealth Simplified",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "ItemPage",
+      "@id": "https://fastdoc.com/#webpage",
+      "url": "https://fastdoc.com/",
+      "name": "FastDoc - Telehealth Simplified",
+      "datePublished": "2024-09-10",
+      "dateModified": "2024-09-10",
+      "about": {
+        "@id": "https://fastdoc.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://fastdoc.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://fastdoc.com/images/logo/logo.png"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://fastdoc.com/#author",
+      "name": "FastDoc",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8fa0c8b0ca778d551052d4fde3c97b72?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8fa0c8b0ca778d551052d4fde3c97b72?s=96&amp;d=mm&amp;r=g",
+        "caption": "FastDoc",
+        "inLanguage": "en-US"
+      },
+      "sameAs": [
+        "https://www.facebook.com/fastdoc",
+        "https://twitter.com/fastdoc"
+      ],
+      "worksFor": {
+        "@id": "https://fastdoc.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "FastDoc - Telehealth Simplified",
+      "description": "FastDoc is a leading telehealth company committed to providing convenient and affordable healthcare services to people. We believe that healthcare should be accessible to everyone, regardless of their location, and that’s why we offer our services through an innovative telehealth platform.",
+      "name": "FastDoc - Telehealth Simplified",
+      "@id": "https://fastdoc.com/#schema-91492",
+      "isPartOf": {
+        "@id": "https://fastdoc.com/#webpage"
+      },
+      "publisher": {
+        "@id": "https://fastdoc.com/#organization"
+      },
+      "image": {
+        "@id": "https://fastdoc.com/images/logo/logo.png"
+      },
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@id": "https://fastdoc.com/#webpage"
+      }
+    },
+    {
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://fastdoc.com/images/logo/logo.png"
+      },
+      "name": "FastDoc - Telehealth Simplified",
+      "description": "FastDoc is a leading telehealth company committed to providing convenient and affordable healthcare services to people. We believe that healthcare should be accessible to everyone, regardless of their location, and that’s why we offer our services through an innovative telehealth platform.",
+      "@type": "Event",
+      "eventStatus": "EventScheduled",
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "FastDoc",
+        "url": "https://fastdoc.com/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "215 Water St",
+          "addressLocality": "Brooklyn New York",
+          "addressRegion": "New York",
+          "postalCode": "11201",
+          "addressCountry": "United States"
+        }
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "FastDoc",
+        "sameAs": "https://fastdoc.com/"
+      },
+      "startDate": "2022-02-01T00:00:00+00:00",
+      "offers": {
+        "@type": "Offer",
+        "name": "General Admission",
+        "category": "primary",
+        "availability": "InStock"
+      },
+      "review": {
+        "@type": "Review",
+        "datePublished": "2024-09-10",
+        "dateModified": "2024-09-10",
+        "author": {
+          "@type": "Person",
+          "name": "google"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "FastDoc - Telehealth Simplified",
+      "url": "https://fastdoc.com/",
+      "description": "FastDoc is a leading telehealth company committed to providing convenient and affordable healthcare services to people. We believe that healthcare should be accessible to everyone, regardless of their location, and that’s why we offer our services through an innovative telehealth platform.",
+      "sku": "98734574-43950",
+      "brand": {
+        "@type": "Brand",
+        "name": "FastDoc",
+        "url": "https://fastdoc.com/"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://fastdoc.com/images/logo/logo.png"
+      },
+      "gtin8": "12341654we4rw",
+      "mpn": "1337",
+      "additionalType": "telehealth",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://fastdoc.com/",
+        "price": "0",
+        "priceCurrency": "usd",
+        "availability": "InStock"
+      },
+      "review": {
+        "@type": "Review",
+        "datePublished": "2024-09-10",
+        "dateModified": "2024-09-10",
+        "author": {
+          "@id": "https://fastdoc.com/#author",
+          "name": "FastDoc"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      "@id": "https://fastdoc.com/#schema-91494"
+    }
+  ]
+}
