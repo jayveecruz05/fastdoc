@@ -53,13 +53,13 @@
             <span> &vert; </span>
             <NuxtLink class="link-to text-white" :to="{ path: '/miscellaneous' }">Miscellaneous</NuxtLink>
             <!-- <span> &vert; </span>
-            <NuxtLink class="link-to text-white">SiteMap</NuxtLink>
+            <NuxtLink class="link-to text-white">SiteMap</NuxtLink> -->
             <span> &vert; </span>
-            <NuxtLink class="link-to text-white" :to="{ path: '/find-a-doctor' }">Find A Doctor</NuxtLink> -->
+            <NuxtLink class="link-to text-white" :to="{ path: '/find-a-doctor' }">Find A Doctor</NuxtLink>
             <span> &vert; </span>
             <NuxtLink class="link-to text-white" :to="{ path: '/blog' }">Blog</NuxtLink>
-            <!-- <span> &vert; </span>
-            <NuxtLink class="link-to text-white" :to="{ path: '/careers' }">Careers</NuxtLink> -->
+            <span> &vert; </span>
+            <NuxtLink class="link-to text-white" :to="{ path: '/careers' }">Careers</NuxtLink>
             <span> &vert; </span>
             <NuxtLink class="link-to text-white" :to="{ path: '/medical-providers' }">Medical Providers</NuxtLink>
             <!-- <span> &vert; </span>
@@ -86,7 +86,7 @@
   import type { SpecializationType } from '@/types/api';
 
   // Special Data
-  // const { specialization } = useStore();
+  const { specialization } = useStore();
 
   // Data
   const teleMedicine = ref<SpecializationType[]>([
@@ -104,11 +104,11 @@
   ]);
 
   // API Requestor
-  // const specializationData = specialization.fetchList();
-  // await specializationData.suspense();
-  // if (specializationData.isSuccess.value) {
-  //   teleMedicine.value = [ ...specializationData.data.value.data ];
-  // }
+  const specializationData = specialization.fetchList();
+  await specializationData.suspense();
+  if (specializationData.isSuccess.value) {
+    teleMedicine.value = [ ...specializationData.data.value.data ];
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

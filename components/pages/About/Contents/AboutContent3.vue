@@ -6,7 +6,7 @@
           <h1 class="tagline mb-4">Where Technology Meets Healthcare</h1>
           <p class="text-body-1 text-primary-text-color mb-5">We believe that telehealth is the future of healthcare, and we are committed to providing the highest level of medical care to our patients. Our team of licensed healthcare professionals includes physicians, nurse practitioners, and physician assistants who are experienced in addressing a wide range of medical concerns.</p>
           <div class="d-flex flex-wrap justify-center justify-sm-start mb-4">
-            <v-btn color="primary" size="large" rounded="lg" :to="{ path: '/' }">Sign-Up</v-btn> <!-- :to="{ path: '/sign-up' }" -->
+            <v-btn color="primary" size="large" rounded="lg" :to="{ path: '/sign-up' }">Sign-Up</v-btn>
           </div>
         </v-col>
         <v-col class="image-wrapper" sm="6" cols="12">

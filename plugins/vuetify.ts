@@ -1,5 +1,6 @@
 import { createVuetify } from 'vuetify';
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
+import '@mdi/font/css/materialdesignicons.css';
+// import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 import 'vuetify/styles';
 // import { VApp, VAppBar, VAppBarNavIcon, VMain, VFooter, VNavigationDrawer, VMenu, VList, VListGroup, VListItem, VListItemTitle, VContainer, VRow, VCol, VAvatar, VImg, VIcon, VCard, VCardTitle, VCardText, VCardActions, VBtn, VForm, VAutocomplete, VTextField, VTextarea, VSelect, VRadio, VChip, VCheckbox, VTooltip, VPagination, VRating, VDialog, VAlert, VProgressLinear, VExpansionPanels, VExpansionPanel, VExpansionPanelTitle, VExpansionPanelText, VExpandTransition, VFadeTransition, VScrollYTransition, VDivider, VSpacer } from 'vuetify/components';
 
@@ -7,11 +8,11 @@ export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     ssr: true,
     // components: { VApp, VAppBar, VAppBarNavIcon, VMain, VFooter, VNavigationDrawer, VMenu, VList, VListGroup, VListItem, VListItemTitle, VContainer, VRow, VCol, VAvatar, VImg, VIcon, VCard, VCardTitle, VCardText, VCardActions, VBtn, VForm, VAutocomplete, VTextField, VTextarea, VSelect, VRadio, VChip, VCheckbox, VTooltip, VPagination, VRating, VDialog, VAlert, VProgressLinear, VExpansionPanels, VExpansionPanel, VExpansionPanelTitle, VExpansionPanelText, VExpandTransition, VFadeTransition, VScrollYTransition, VDivider, VSpacer },
-    icons: {
-      defaultSet: 'mdi',
-      aliases,
-      sets: { mdi }
-    },
+    // icons: {
+    //   defaultSet: 'mdi',
+    //   aliases,
+    //   sets: { mdi }
+    // },
     theme: {
       defaultTheme: 'light',
       themes: {

@@ -1,6 +1,6 @@
-import /* vuetify, */ { transformAssetUrls } from 'vite-plugin-vuetify';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import svgLoader from 'vite-svg-loader';
-import preRenderRoutes from './assets/json/prerender-routes-soon.json';
+import preRenderRoutes from './assets/json/prerender-routes.json';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -180,7 +180,7 @@ export default defineNuxtConfig({
     },
     plugins: [
       svgLoader({ defaultImport: 'component', svgo: false }),
-      // vuetify({ autoImport: true })
+      vuetify({ autoImport: true })
     ],
     // css: {
     //   preprocessorOptions: {
@@ -248,26 +248,27 @@ export default defineNuxtConfig({
   ignore: [
     'components/Template.vue',
     'components/pages/Home/**',
-    'components/pages/Featured/**',
-    'components/pages/Careers/**',
-    'components/pages/Consultation/**',
-    'components/pages/MyProfile/**',
-    'components/pages/Doctor.vue',
-    'components/pages/FindADoctor.vue',
-    'components/pages/Login.vue',
-    'components/pages/ForgotPassword.vue',
-    'components/pages/ForgotPassword.vue',
-    'components/pages/SignUp.vue',
-    'components/pages/Specializations.vue',
-    'layouts/main.vue',
-    'pages/careers/**',
-    'pages/doctor/**',
-    'pages/my-profile/**',
-    'pages/find-a-doctor.vue',
-    'pages/forgot-password.vue',
-    'pages/login.vue',
-    'pages/sign-up.vue',
-    'pages/specializations.vue'
+    'components/pages/Soon.vue',
+    // 'components/pages/Featured/**',
+    // 'components/pages/Careers/**',
+    // 'components/pages/Consultation/**',
+    // 'components/pages/MyProfile/**',
+    // 'components/pages/Doctor.vue',
+    // 'components/pages/FindADoctor.vue',
+    // 'components/pages/Login.vue',
+    // 'components/pages/ForgotPassword.vue',
+    // 'components/pages/ForgotPassword.vue',
+    // 'components/pages/SignUp.vue',
+    // 'components/pages/Specializations.vue',
+    // 'layouts/main.vue',
+    // 'pages/careers/**',
+    // 'pages/doctor/**',
+    // 'pages/my-profile/**',
+    // 'pages/find-a-doctor.vue',
+    // 'pages/forgot-password.vue',
+    // 'pages/login.vue',
+    // 'pages/sign-up.vue',
+    // 'pages/specializations.vue'
   ],
   devServer: { port: 8000 },
   devtools: { enabled: true },

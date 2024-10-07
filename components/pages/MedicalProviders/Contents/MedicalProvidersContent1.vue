@@ -9,7 +9,7 @@
           <h1 class="tagline mb-4">Join us and become a provider at FastDoc today!</h1>
           <p class="text-body-1 text-primary-text-color mb-5">Become part of our growing team to provide convenient healthcare to people all over the USA. We offer a flexible and user-friendly platform that enables you to provide healthcare services to your patients from anywhere in the world. As a telehealth provider, you can provide virtual consultations, diagnose and treat common illnesses, prescribe medication, and much more.</p>
           <div class="d-flex flex-wrap justify-center justify-sm-start mb-4">
-            <v-btn color="primary" size="large" rounded="lg" :to="{ path: '/' }">Join Now</v-btn> <!-- :to="{ path: '/careers' }" -->
+            <v-btn color="primary" size="large" rounded="lg" :to="{ path: '/careers' }">Join Now</v-btn>
           </div>
         </v-col>
       </v-row>

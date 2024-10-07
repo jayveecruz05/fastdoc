@@ -5,11 +5,11 @@
         <v-col class="pa-0" cols="12">
           <v-container id="top-wrapper" class="d-flex align-center bg-primary py-2" fluid>
             <v-row class="ma-0 max-width" justify="space-between">
-              <v-col class="d-flex align-center pa-0" md="auto"> <!-- v-if="(tabletOrDesktopView)" -->
+              <v-col v-if="(tabletOrDesktopView)" class="d-flex align-center pa-0" md="auto">
                 <Clock class="icon clock" />
                 <span class="text-body-2 px-3">Mon &#8722; Sat 7:00 AM &#8722; 12:00 AM EST</span>
               </v-col>
-              <!-- <v-col v-if="(isFullyLoggedIn)" class="d-flex align-center justify-end flex-sm-grow-0 pa-0">
+              <v-col v-if="(isFullyLoggedIn)" class="d-flex align-center justify-end flex-sm-grow-0 pa-0">
                 <v-menu offset="10" open-on-click open-on-hover>
                   <template v-slot:activator="{ props }">
                     <v-btn v-bind="props" variant="text" rounded="lg" size="large" color="white">
@@ -41,7 +41,7 @@
               <v-col v-else class="d-flex align-center flex-grow-0 pa-0 py-1 mx-auto mx-md-0" md="auto">
                 <v-btn class="mx-2" variant="text" rounded="lg" color="white" @click="() => { navigateTo({ path: '/login' }); }">Login</v-btn>
                 <v-btn class="mx-2 text-tertiary" variant="flat" rounded="lg" @click="() => { navigateTo({ path: '/sign-up' }); }">Sign-Up</v-btn>
-              </v-col> -->
+              </v-col>
             </v-row>
           </v-container>
         </v-col>
@@ -85,7 +85,7 @@
   import Logo from '@/public/images/logo/logo.svg';
   // import userPhoto from '@/public/images/common/user-photo.png';
 
-  // import { navigateTo } from '#app';
+  import { navigateTo } from '#app';
   import { eventBus } from '#imports';
 
   import { VAppBar, VAppBarNavIcon, VMenu, VList, VListItem, VContainer, VRow, VCol, VBtn, VSpacer } from 'vuetify/components';
@@ -97,32 +97,32 @@
   withDefaults(defineProps<Props>(), { navigationList: () => ([]) });
 
   // Special Data
-  // const { isFullyLoggedIn } = useCookies();
-  // const { authentication } = useStore();
+  const { isFullyLoggedIn } = useCookies();
+  const { authentication } = useStore();
   const { tabletOrDesktopView, mobileOrTabletView } = useViewPort();
 
   // Static Data
-  // const menuList = [
-  //   { title: 'My Profile', path: '/my-profile' },
-  //   { title: 'Past Appointments', path: '/my-profile/past-appointments' },
-  //   { title: 'Medical Records', path: '/my-profile/medical-records' },
-  //   // { title: 'Billing History', path: '/my-profile/billing-history' },
-  //   { title: 'Messages', path: '/my-profile/messages' }
-  // ];
+  const menuList = [
+    { title: 'My Profile', path: '/my-profile' },
+    { title: 'Past Appointments', path: '/my-profile/past-appointments' },
+    { title: 'Medical Records', path: '/my-profile/medical-records' },
+    // { title: 'Billing History', path: '/my-profile/billing-history' },
+    { title: 'Messages', path: '/my-profile/messages' }
+  ];
 
   // API Requestor
   // const userDetails = { first_name: 'John', last_name: 'Doe', avatar: userPhoto };
-  // const { data: userDetails } = authentication.fetchUserDetails();
-  // const logout = authentication.logout();
+  const { data: userDetails } = authentication.fetchUserDetails();
+  const logout = authentication.logout();
 
   // Methods
-  // const handleLogout = () => {
-  //   logout.mutateAsync().then(() => {
-  //     eventBus.emit('logout');
-  //   }).catch(() => {
-  //     eventBus.emit('logout');
-  //   });
-  // };
+  const handleLogout = () => {
+    logout.mutateAsync().then(() => {
+      eventBus.emit('logout');
+    }).catch(() => {
+      eventBus.emit('logout');
+    });
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

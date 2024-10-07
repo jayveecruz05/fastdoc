@@ -9,7 +9,7 @@
           <h1 class="tagline mb-5">Expert Healthcare Providers for your every Medical Concerns</h1>
           <p class="text-body-1 text-primary-text-color mb-5">Our team of healthcare professionals is comprised of licensed physicians, nurse practitioners, and physician assistants who are available to address a wide range of medical concerns. Whether you need a quick prescription refill, have questions about a new medication, or require a diagnosis for a non-emergency medical issue, our healthcare providers are here to help.</p>
           <div class="d-flex flex-wrap justify-center justify-sm-start mb-4">
-            <v-btn color="primary" size="large" rounded="lg" :to="{ path: '/' }">Get Started</v-btn> <!-- :to="{ path: '/consultation/form' }" -->
+            <v-btn color="primary" size="large" rounded="lg" :to="{ path: '/consultation/form' }">Get Started</v-btn>
           </div>
         </v-col>
       </v-row>

@@ -17,7 +17,7 @@
               <h2 class="text-h6 font-weight-bold text-secondary-text-color mb-2">Foster strong provider-patient relationships</h2>
               <p class="text-body-1 text-primary-text-color">We believe that building trust and communication between providers and patients is critical to delivering effective and personalized care, and we’re committed to facilitating these relationships through our platform.</p>
 
-              <v-btn class="mt-7" color="primary" size="large" rounded="lg" :to="{ path: '/' }">Join Now</v-btn> <!-- :to="{ path: '/careers' }" -->
+              <v-btn class="mt-7" color="primary" size="large" rounded="lg" :to="{ path: '/careers' }">Join Now</v-btn>
             </v-card-text>
           </v-card>
         </v-col>

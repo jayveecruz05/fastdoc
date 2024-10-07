@@ -17,8 +17,8 @@
               <v-col v-for="(specialization) in specializationList" :key="`specialization-${specialization.slug}`" sm="6" lg="4" cols="6">
                 <NuxtLink class="text-decoration-none" :to="{ path: '/find-a-doctor', query: { specialization: specialization.slug } }" tag="div">
                   <v-card class="d-flex flex-column align-start fill-height text-left" rounded="lg" color="specialization-color" hover>
-                    <!-- <component :is="getIcon(specialization.icon)" class="icon specialization-icon mt-3 mx-3" /> -->
-                    <NuxtImg v-if="(specialization.icon)" class="icon specialization-icon mt-3 mx-3" loading="lazy" width="67px" height="67px" :src="specialization.icon" :lazy-src="specialization.icon" :alt="specialization.slug" />
+                    <component :is="getIcon(specialization.name!)" class="icon specialization-icon mt-3 mx-3" />
+                    <!-- <NuxtImg v-if="(specialization.icon)" class="icon specialization-icon mt-3 mx-3" loading="lazy" width="67px" height="67px" :src="specialization.icon" :lazy-src="specialization.icon" :alt="specialization.slug" /> -->
                     <v-card-title tag="h2" class="font-weight-bold text-body-1 text-secondary-text-color px-3">{{ specialization.name }}</v-card-title>
                     <v-card-text tag="h3" class="text-primary-text-color pb-3 px-3">{{ specialization.description }}</v-card-text>
                     <v-icon class="mb-3 mx-3" icon="mdi-arrow-right" color="primary" />
@@ -39,7 +39,7 @@
 
   // Special Data
   const { specialization } = useStore();
-  // const { getIcon } = useSpecializationIcons();
+  const { getIcon } = useSpecializationIcons();
 
   // Data
   const specializationList = ref<SpecializationType[]>([
