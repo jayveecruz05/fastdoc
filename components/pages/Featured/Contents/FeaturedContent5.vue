@@ -41,25 +41,23 @@
   const { specialization } = useStore();
   const { getIcon } = useSpecializationIcons();
 
-  // Data
-  const specializationList = ref<SpecializationType[]>([
-    // { id: 1, icon: 'Cardiology', slug: 'cardiology', name: 'Cardiology', description: 'Care for the heart and blood vessels.' },
-    // { id: 2, icon: 'Dermatology', slug: 'dermatology', name: 'Dermatology', description: 'Treatment for skin, hair, and nail conditions.' },
-    // { id: 3, icon: 'Endocrinology', slug: 'endocrinology', name: 'Endocrinology', description: 'Treatment of diseases related to hormones.' },
-    // { id: 4, icon: 'Gastroenterology', slug: 'gastroenterology', name: 'Gastroenterology', description: 'Care for the stomach, intestines, colon, etc.' },
-    // { id: 5, icon: 'Gynecology', slug: 'gynecology', name: 'Gynecology', description: 'Treatment of women who are not pregnant.' },
-    // { id: 6, icon: 'Neurology', slug: 'neurology', name: 'Neurology', description: 'Treatment of disorders of the nervous system.' },
-    // { id: 7, icon: 'Oncology', slug: 'oncology', name: 'Oncology', description: 'Diagnosis and treatment of cancer.' },
-    // { id: 8, icon: 'Pathology', slug: 'pathology', name: 'Pathology', description: 'Treatment of illness and diseases.' },
-    // { id: 9, icon: 'Pediatrics', slug: 'pediatrics', name: 'Pediatrics', description: 'Medical care of infants, children, & adolescents.' }
-  ]);
-
   // API Requestor
-  const specializationData = specialization.fetchList();
-  await specializationData.suspense();
-  if (specializationData.isSuccess.value) {
-    specializationList.value = [ ...specializationData.data.value.data.slice(0, 9) ];
-  }
+  const { data: specializationData, suspense: specializationSuspense } = specialization.fetchList();
+  await specializationSuspense();
+
+  // Data
+  const specializationList = computed<SpecializationType[]>(() => ((specializationData.value || []).slice(0, 9)));
+  // const specializationList = ref<SpecializationType[]>([
+  //   // { id: 1, icon: 'Cardiology', slug: 'cardiology', name: 'Cardiology', description: 'Care for the heart and blood vessels.' },
+  //   // { id: 2, icon: 'Dermatology', slug: 'dermatology', name: 'Dermatology', description: 'Treatment for skin, hair, and nail conditions.' },
+  //   // { id: 3, icon: 'Endocrinology', slug: 'endocrinology', name: 'Endocrinology', description: 'Treatment of diseases related to hormones.' },
+  //   // { id: 4, icon: 'Gastroenterology', slug: 'gastroenterology', name: 'Gastroenterology', description: 'Care for the stomach, intestines, colon, etc.' },
+  //   // { id: 5, icon: 'Gynecology', slug: 'gynecology', name: 'Gynecology', description: 'Treatment of women who are not pregnant.' },
+  //   // { id: 6, icon: 'Neurology', slug: 'neurology', name: 'Neurology', description: 'Treatment of disorders of the nervous system.' },
+  //   // { id: 7, icon: 'Oncology', slug: 'oncology', name: 'Oncology', description: 'Diagnosis and treatment of cancer.' },
+  //   // { id: 8, icon: 'Pathology', slug: 'pathology', name: 'Pathology', description: 'Treatment of illness and diseases.' },
+  //   // { id: 9, icon: 'Pediatrics', slug: 'pediatrics', name: 'Pediatrics', description: 'Medical care of infants, children, & adolescents.' }
+  // ]);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

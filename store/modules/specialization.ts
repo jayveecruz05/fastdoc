@@ -9,7 +9,7 @@ const fetchList = (config: AxiosRequestConfig = {}) => {
     queryKey: [ apiCallID ],
     queryFn: async () => {
       api.cancelCurrentApiCall({ id: apiCallID });
-      return await getData({ url: '/api/specialization', config, apiCancelTokenID: apiCallID }).then((response) => { return response.data; }).catch((error) => { throw error.response; });
+      return await getData({ url: '/api/specialization', config, apiCancelTokenID: apiCallID }).then((response) => { return response.data?.data; }).catch((error) => { throw error.response; });
     }
   });
 };

@@ -1,5 +1,5 @@
 <template>
-  <v-container id="doctor" class="bg-tertiary-background fill-height align-start py-10" fluid>
+  <v-container id="doctor" class="bg-tertiary-background fill-height align-start py-12" fluid>
     <v-row class="max-width ma-0">
       <v-col class="pt-0 pb-3 px-3" cols="12">
         <v-btn class="text-primary" rounded="lg" size="large" prepend-icon="mdi-arrow-left" :to="{ path: '/find-a-doctor' }">Back</v-btn>
@@ -136,9 +136,12 @@
   import doctorPhoto from '@/public/images/common/doctor-photo.png';
 
   // Special Data
+  const { provider } = useStore();
+  const route = useRoute();
   const { getDayNow, getTimeline } = useDate();
 
   // Data
+  const filter = reactive<{ id: string | null; }>({ id: (route.params?.id || null) as string });
   const doctorDetails = {
     id: '1',
     image: doctorPhoto,
@@ -183,6 +186,12 @@
     const totalRatings = doctorDetails.ratings.map((currentValue) => ({ ...currentValue, percent: ((currentValue.count / totalCount) * 100) }), []);
     return totalRatings;
   });
+
+  const providerDetails = provider.fetchProviderDetails(filter);
+  await providerDetails.suspense();
+  if (providerDetails.isSuccess.value) {
+    // console.log(toRaw(providerDetails.data.value));
+  }
 
   useSeoMeta({ title: doctorDetails.name });
 </script>

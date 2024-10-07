@@ -3,12 +3,12 @@
     <v-container class="py-5 px-0" fluid>
       <v-row class="ma-0">
         <v-col class="d-flex flex-column flex-lg-row justify-space-between pa-0 max-width" cols="12">
-          <div v-if="(teleMedicine.length > 0)" class="w-75 pa-4 pb-10 pb-md-10">
+          <div v-if="(specializationList.length > 0)" class="w-75 pa-4 pb-10 pb-md-10">
             <h2 class="text-h5 pa-1 pb-3">Telemedicine</h2>
             <v-container class="pa-0" fluid>
               <v-row class="ma-0" justify="start" align="center">
-                <v-col v-for="(item) in teleMedicine" :key="`telemedicine-${item.slug}`" class="pa-1 pr-6" sm="6" md="4" cols="12">
-                  <NuxtLink class="link-to text-body-1 text-white" :to="{ path: '/find-a-doctor', query: { specialization: item.slug } }">{{ item.name }}</NuxtLink>
+                <v-col v-for="(item) in specializationList" :key="`specialization-${item.slug}`" class="pa-1 pr-6" sm="6" md="4" cols="12">
+                  <NuxtLink class="link-to text-body-1 text-white" :to="{ path: '/find-a-doctor', query: { specializations: item.slug } }">{{ item.name }}</NuxtLink>
                 </v-col>
               </v-row>
             </v-container>
@@ -43,7 +43,7 @@
             </v-container>
           </div> -->
         </v-col>
-        <v-divider v-if="(teleMedicine.length > 0)" class="mx-4 mb-6" />
+        <v-divider v-if="(specializationList.length > 0)" class="mx-4 mb-6" />
         <v-col class="d-flex flex-column flex-md-row justify-space-between align-center text-center py-0 px-4 max-width" cols="12">
           <Logo id="logo" class="icon mb-4 ma-md-0" />
           <p class="text-caption text-uppercase ma-0">
@@ -53,13 +53,13 @@
             <span> &vert; </span>
             <NuxtLink class="link-to text-white" :to="{ path: '/miscellaneous' }">Miscellaneous</NuxtLink>
             <!-- <span> &vert; </span>
-            <NuxtLink class="link-to text-white">SiteMap</NuxtLink> -->
+            <NuxtLink class="link-to text-white">SiteMap</NuxtLink>
             <span> &vert; </span>
-            <NuxtLink class="link-to text-white" :to="{ path: '/find-a-doctor' }">Find A Doctor</NuxtLink>
+            <NuxtLink class="link-to text-white" :to="{ path: '/find-a-doctor' }">Find A Doctor</NuxtLink> -->
             <span> &vert; </span>
             <NuxtLink class="link-to text-white" :to="{ path: '/blog' }">Blog</NuxtLink>
-            <span> &vert; </span>
-            <NuxtLink class="link-to text-white" :to="{ path: '/careers' }">Careers</NuxtLink>
+            <!-- <span> &vert; </span>
+            <NuxtLink class="link-to text-white" :to="{ path: '/careers' }">Careers</NuxtLink> -->
             <span> &vert; </span>
             <NuxtLink class="link-to text-white" :to="{ path: '/medical-providers' }">Medical Providers</NuxtLink>
             <!-- <span> &vert; </span>
@@ -88,27 +88,25 @@
   // Special Data
   const { specialization } = useStore();
 
-  // Data
-  const teleMedicine = ref<SpecializationType[]>([
-    // { name: 'Cardiology' },
-    // { name: 'Dermatology' },
-    // { name: 'Endocrinology' },
-    // { name: 'Gastroenterology' },
-    // { name: 'Gynecology' },
-    // { name: 'Neurology' },
-    // { name: 'Oncology' },
-    // { name: 'Pathology' },
-    // { name: 'Pediatrics' },
-    // { name: 'Primary Care' },
-    // { name: 'Psychiatry' }
-  ]);
-
   // API Requestor
-  const specializationData = specialization.fetchList();
-  await specializationData.suspense();
-  if (specializationData.isSuccess.value) {
-    teleMedicine.value = [ ...specializationData.data.value.data ];
-  }
+  const { data: specializationData, suspense: specializationSuspense } = specialization.fetchList();
+  await specializationSuspense();
+
+  // Data
+  const specializationList = computed<SpecializationType[]>(() => (specializationData.value || []));
+  // const specializationList = ref<SpecializationType[]>([
+  //   // { name: 'Cardiology' },
+  //   // { name: 'Dermatology' },
+  //   // { name: 'Endocrinology' },
+  //   // { name: 'Gastroenterology' },
+  //   // { name: 'Gynecology' },
+  //   // { name: 'Neurology' },
+  //   // { name: 'Oncology' },
+  //   // { name: 'Pathology' },
+  //   // { name: 'Pediatrics' },
+  //   // { name: 'Primary Care' },
+  //   // { name: 'Psychiatry' }
+  // ]);
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
